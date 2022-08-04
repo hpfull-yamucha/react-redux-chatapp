@@ -25,20 +25,3 @@ Redux周りのディレクトリ構成にはre-ducksパターンを採用。
 
 Firebase Realtime Databaseを採用。
 
-#### 補足
-
-候補①AWS Lambda, ②Appsync(GraphQL), ③Firabase Realtime Database.   
-①はリアルタイムの通信に別途Websocketの対応が必要そうだったため除外した。  
-②はCLIによって自動生成されたソースコードで簡単にリアルタイムな通信が出来たが、状態管理がReduxよりもApollo Clientの方が相性が良さそうだったため除外した。  
-③は接続が簡単であること、リアルタイム同期型のDBであること、ホスティングが容易なことから③を選択した。  
-
-
-## 工夫した点
-
-- メッセージに対してのリアクション機能を追加した点
-- redux-persistで入室したユーザーデータをlocal storageに永続化している点
-
-## 課題
-
-- Redux周りの型付けに苦戦し、any型で回避した箇所がある点
-- メッセージのページネーションを実装出来ていない点
